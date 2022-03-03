@@ -84,10 +84,6 @@ func resourceOpsgenieIntegrationAction() *schema.Resource {
 													Type:     schema.TypeString,
 													Optional: true,
 												},
-												"order": {
-													Type:     schema.TypeInt,
-													Optional: true,
-												},
 											},
 										},
 									},
@@ -259,10 +255,6 @@ func resourceOpsgenieIntegrationAction() *schema.Resource {
 													Type:     schema.TypeString,
 													Optional: true,
 												},
-												"order": {
-													Type:     schema.TypeInt,
-													Optional: true,
-												},
 											},
 										},
 									},
@@ -340,10 +332,6 @@ func resourceOpsgenieIntegrationAction() *schema.Resource {
 												},
 												"expected_value": {
 													Type:     schema.TypeString,
-													Optional: true,
-												},
-												"order": {
-													Type:     schema.TypeInt,
 													Optional: true,
 												},
 											},
@@ -425,10 +413,6 @@ func resourceOpsgenieIntegrationAction() *schema.Resource {
 													Type:     schema.TypeString,
 													Optional: true,
 												},
-												"order": {
-													Type:     schema.TypeInt,
-													Optional: true,
-												},
 											},
 										},
 									},
@@ -506,10 +490,6 @@ func resourceOpsgenieIntegrationAction() *schema.Resource {
 												},
 												"expected_value": {
 													Type:     schema.TypeString,
-													Optional: true,
-												},
-												"order": {
-													Type:     schema.TypeInt,
 													Optional: true,
 												},
 											},
@@ -638,7 +618,6 @@ func flattenOpsgenieFilter(input *integration.Filter) []map[string]interface{} {
 	conditions := make([]map[string]interface{}, 0, len(input.Conditions))
 	for _, r := range input.Conditions {
 		conditionMap := make(map[string]interface{})
-		conditionMap["order"] = r.Order
 		if r.Key != "" {
 			conditionMap["key"] = r.Key
 		}
